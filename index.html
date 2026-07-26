@@ -24,11 +24,7 @@
 <body>
 
     <header>
-        
-        <h1>Baba Atta Chakki</h1>
 
-        <nav>
-            <header>
     <h1>BABA ATTA CHAKKI</h1>
 
     <nav>
@@ -40,12 +36,8 @@
     <button onclick="showCart()">
         🛒 Cart (<span id="cart-count">0</span>)
     </button>
+
 </header>
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
     <section id="home" class="hero">
 
@@ -68,93 +60,202 @@
         <div class="product-container">
 
     <div class="product">
+
     <img src="mp-sarbati.jpg" alt="MP Sarbati Wheat Atta">
+
     <h3>MP Sarbati Wheat Atta</h3>
-    <p>1 KG</p>
-    <h4>₹50</h4>
-    <button onclick="addToCart('MP Sarbati Wheat Atta', 50)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="15">250 GM</option>
+        <option value="28">500 GM</option>
+        <option value="50" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">50</span></h4>
+
+    <button onclick="addProduct(this,'MP Sarbati Wheat Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="wheat-atta.jpg" alt="Wheat Atta">
+
     <h3>Wheat Atta</h3>
-    <p>1 KG</p>
-    <h4>₹44</h4>
-    <button onclick="addToCart('Wheat Atta', 44)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="12">250 GM</option>
+        <option value="24">500 GM</option>
+        <option value="44" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">44</span></h4>
+
+    <button onclick="addProduct(this,'Wheat Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="multigrain-atta.jpg" alt="Multi Grain Atta">
+
     <h3>Multi Grain Atta</h3>
-    <p>1 KG</p>
-    <h4>₹100</h4>
-    <button onclick="addToCart('Multi Grain Atta', 100)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="30">250 GM</option>
+        <option value="55">500 GM</option>
+        <option value="100" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">100</span></h4>
+
+    <button onclick="addProduct(this,'Multi Grain Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="chana-sattu.jpg" alt="Chana Sattu">
+
     <h3>Chana Sattu</h3>
-    <p>1 KG</p>
-    <h4>₹150</h4>
-    <button onclick="addToCart('Chana Sattu', 150)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="40">250 GM</option>
+        <option value="80">500 GM</option>
+        <option value="150" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">150</span></h4>
+
+    <button onclick="addProduct(this,'Chana Sattu')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="jau-sattu.jpg" alt="Jau Sattu">
+
     <h3>Jau Sattu</h3>
-    <p>1 KG</p>
-    <h4>₹110</h4>
-    <button onclick="addToCart('Jau Sattu', 110)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="30">250 GM</option>
+        <option value="60">500 GM</option>
+        <option value="110" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">110</span></h4>
+
+    <button onclick="addProduct(this,'Jau Sattu')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="chana-besan.jpg" alt="Chana Besan">
+
     <h3>Chana Besan</h3>
-    <p>1 KG</p>
-    <h4>₹110</h4>
-    <button onclick="addToCart('Chana Besan', 110)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="30">250 GM</option>
+        <option value="60">500 GM</option>
+        <option value="110" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">110</span></h4>
+
+    <button onclick="addProduct(this,'Chana Besan')">Add to Cart</button>
+
 </div>
 
 <div class="product">
+
     <img src="makka-atta.jpg" alt="Makka Atta">
+
     <h3>Makka Atta</h3>
-    <p>1 KG</p>
-    <h4>₹50</h4>
-    <button onclick="addToCart('Makka Atta', 50)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="15">250 GM</option>
+        <option value="28">500 GM</option>
+        <option value="50" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">50</span></h4>
+
+    <button onclick="addProduct(this,'Makka Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
-    <img src="bajra-atta.jpg" alt="Bajra Atta">
+
+    <img src=bajra-atta.jpg" alt="Bajra Atta">
+
     <h3>Bajra Atta</h3>
-    <p>1 KG</p>
-    <h4>₹50</h4>
-    <button onclick="addToCart('Bajra Atta', 50)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="15">250 GM</option>
+        <option value="28">500 GM</option>
+        <option value="50" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">50</span></h4>
+
+    <button onclick="addProduct(this,'Bajra Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
-    <img src="jau-guri-atta.jpg" alt="Jau Guri Atta">
+
+    <img src=jau-guri-atta.jpg" alt="Jau Guri Atta">
+
     <h3>Jau/Guri Atta</h3>
-    <p>1 KG</p>
-    <h4>₹70</h4>
-    <button onclick="addToCart('Jau/Guri Atta', 70)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="20">250 GM</option>
+        <option value="40">500 GM</option>
+        <option value="70" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">70</span></h4>
+
+    <button onclick="addProduct(this,'Jau/Guri Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
-    <img src="madua-ragi-atta.jpg" alt="Madua/Ragi Atta">
+
+    <img src="madua-ragi-atta.jpg" alt="Madua Ragi Atta">
+
     <h3>Madua/Ragi Atta</h3>
-    <p>1 KG</p>
-    <h4>₹100</h4>
-    <button onclick="addToCart('Madua/Ragi Atta', 100)">Add to Cart</button>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="30">250 GM</option>
+        <option value="60">500 GM</option>
+        <option value="100" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">100</span></h4>
+
+    <button onclick="addProduct(this,'Madua/Ragi Atta')">Add to Cart</button>
+
 </div>
 
 <div class="product">
-    <img src="jwar-atta.jpg" alt="Jwar Atta">
-    <h3>Jwar Atta</h3>
-    <p>1 KG</p>
-    <h4>₹100</h4>
-    <button onclick="addToCart('Jwar Atta', 100)">Add to Cart</button>
-</div>
 
+    <img src="jwar-atta.jpg" alt="Jwar Atta">
+
+    <h3>Jwar Atta</h3>
+
+    <select class="weight" onchange="changePrice(this)">
+        <option value="30">250 GM</option>
+        <option value="60">500 GM</option>
+        <option value="100" selected>1 KG</option>
+    </select>
+
+    <h4>₹<span class="price">100</span></h4>
+
+    <button onclick="addProduct(this,'Jwar Atta')">Add to Cart</button>
+
+</div>
 
 </div>
 
