@@ -108,3 +108,17 @@ function addProduct(button, name) {
 
     addToCart(name + " (" + weight + ")", price);
 }
+document.addEventListener("click", function (event) {
+
+    const cart = document.getElementById("cart-section");
+    const cartBtn = event.target.closest("button[onclick='showCart()']");
+
+    // Agar cart button par click hua to kuch mat karo
+    if (cartBtn) return;
+
+    // Agar cart ke bahar click hua to cart band kar do
+    if (!cart.contains(event.target)) {
+        cart.style.display = "none";
+    }
+
+});
