@@ -49,16 +49,12 @@ function removeFromCart(index) {
 
 function showCart() {
 
-    let cart = document.getElementById("cart-section");
+    const cart = document.getElementById("cart-section");
 
-    if(cart.style.display=="block"){
-
-        cart.style.display="none";
-
-    }else{
-
-        cart.style.display="block";
-
+    if (cart.style.display === "block") {
+        cart.style.display = "none";
+    } else {
+        cart.style.display = "block";
     }
 
 }
