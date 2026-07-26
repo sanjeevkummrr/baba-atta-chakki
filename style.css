@@ -102,3 +102,20 @@ footer {
     margin: 10px 0;
     border-bottom: 1px solid #ddd;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+}
+
+.logo h1{
+    color:white;
+    margin:0;
+    font-size:32px;
+}
