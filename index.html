@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Baba Atta Chakki</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="cart-section" class="cart-section">
+
+    <h2>Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+    <button onclick="placeOrder()">
+        Place Order
+    </button>
+
+</div>
+<body>
+
+    <header>
+        
+        <h1>Baba Atta Chakki</h1>
+
+        <nav>
+            <header>
+    <h1>BABA ATTA CHAKKI</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button onclick="showCart()">
+        🛒 Cart (<span id="cart-count">0</span>)
+    </button>
+</header>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+
+        <h2>Fresh & Healthy Food Products</h2>
+
+        <p>
+            Buy high-quality Atta, Sattu and traditional food products.
+        </p>
+
+        <button onclick="scrollToProducts()">
+            Shop Now
+        </button>
+
+    </section>
+
+    <section id="products">
+
+        <h2>Our Products</h2>
+
+        <div class="product-container">
+
+    <div class="product">
+        <img src="images/mp-sarbati.jpg" alt="MP Sarbati Wheat Atta">
+        <h3>MP Sarbati Wheat Atta</h3>
+        <p>1 KG</p>
+        <h4>₹50</h4>
+        <button onclick="addToCart('MP Sarbati Wheat Atta', 50)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/wheat-atta.jpg" alt="Wheat Atta">
+        <h3>Wheat Atta</h3>
+        <p>1 KG</p>
+        <h4>₹44</h4>
+        <button onclick="addToCart('Wheat Atta', 44)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/multigrain-atta.jpg" alt="Multi Grain Atta">
+        <h3>Multi Grain Atta</h3>
+        <p>1 KG</p>
+        <h4>₹100</h4>
+        <button onclick="addToCart('Multi Grain Atta', 100)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/chana-sattu.jpg" alt="Chana Sattu">
+        <h3>Chana Sattu</h3>
+        <p>1 KG</p>
+        <h4>₹150</h4>
+        <button onclick="addToCart('Chana Sattu', 150)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/jau-sattu.jpg" alt="Jau Sattu">
+        <h3>Jau Sattu</h3>
+        <p>1 KG</p>
+        <h4>₹110</h4>
+        <button onclick="addToCart('Jau Sattu', 110)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/chana-besan.jpg" alt="Chana Besan">
+        <h3>Chana Besan</h3>
+        <p>1 KG</p>
+        <h4>₹110</h4>
+        <button onclick="addToCart('Chana Besan', 110)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/makka-atta.jpg" alt="Makka Atta">
+        <h3>Makka Atta</h3>
+        <p>1 KG</p>
+        <h4>₹50</h4>
+        <button onclick="addToCart('Makka Atta', 50)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/bajra-atta.jpg" alt="Bajra Atta">
+        <h3>Bajra Atta</h3>
+        <p>1 KG</p>
+        <h4>₹50</h4>
+        <button onclick="addToCart('Bajra Atta', 50)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/jau-guri-atta.jpg" alt="Jau Guri Atta">
+        <h3>Jau/Guri Atta</h3>
+        <p>1 KG</p>
+        <h4>₹70</h4>
+        <button onclick="addToCart('Jau/Guri Atta', 70)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/madua-ragi-atta.jpg" alt="Madua Ragi Atta">
+        <h3>Madua/Ragi Atta</h3>
+        <p>1 KG</p>
+        <h4>₹100</h4>
+        <button onclick="addToCart('Madua/Ragi Atta', 100)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="images/jwar-atta.jpg" alt="Jwar Atta">
+        <h3>Jwar Atta</h3>
+        <p>1 KG</p>
+        <h4>₹100</h4>
+        <button onclick="addToCart('Jwar Atta', 100)">
+            Add to Cart
+        </button>
+    </div>
+
+</div>
+
+</div>
+
+    </section>
+
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📞 Phone: 9450326864</p>
+
+        <p>📍 Mahabir Nagar Colony Sonatalab Daniyalpur </p>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 Baba Atta Chakki. All Rights Reserved.</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
