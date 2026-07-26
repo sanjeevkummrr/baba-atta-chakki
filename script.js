@@ -108,14 +108,3 @@ function addProduct(button, name) {
 
     addToCart(name + " (" + weight + ")", price);
 }
-window.onclick = function(event){
-
-    let cart=document.getElementById("cart-section");
-
-    if(event.target==cart){
-
-        cart.style.display="none";
-
-    }
-
-}
