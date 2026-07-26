@@ -49,9 +49,18 @@ function removeFromCart(index) {
 
 function showCart() {
 
-    document.getElementById("cart-section").scrollIntoView({
-        behavior: "smooth"
-    });
+    let cart = document.getElementById("cart-section");
+
+    if(cart.style.display=="block"){
+
+        cart.style.display="none";
+
+    }else{
+
+        cart.style.display="block";
+
+    }
+
 }
 
 function placeOrder()  {
