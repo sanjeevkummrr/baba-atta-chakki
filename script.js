@@ -81,3 +81,21 @@ function placeOrder()  {
 
     window.open(whatsappURL, "_blank");
 }
+
+function changePrice(select) {
+    const product = select.parentElement;
+    const price = product.querySelector(".price");
+    price.innerText = select.value;
+}
+
+function addProduct(button, name) {
+    const product = button.parentElement;
+
+    const price = Number(product.querySelector(".price").innerText);
+
+    const weight = product.querySelector(".weight").options[
+        product.querySelector(".weight").selectedIndex
+    ].text;
+
+    addToCart(name + " (" + weight + ")", price);
+}
