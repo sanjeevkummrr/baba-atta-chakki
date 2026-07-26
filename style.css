@@ -114,6 +114,16 @@ footer {
 .cart-section button{
     margin-top:10px;
 }
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
 .logo{
     display:flex;
     align-items:center;
