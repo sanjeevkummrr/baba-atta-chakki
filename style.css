@@ -25,14 +25,20 @@ nav a {
 }
 
 .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
     text-align: center;
-    padding: 80px 20px;
-    background-color: #f0d9b5;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #fff8ee 0%, #f5e6c8 100%);
 }
 
-.hero h2 {
-    font-size: 40px;
-    margin-bottom: 15px;
+.hero h1 {
+    font-size: 52px;
+    color: #4b2e1e;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 button {
@@ -140,4 +146,66 @@ footer {
     color:white;
     margin:0;
     font-size:32px;
+}
+.hero p {
+    font-size: 20px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin:35px 0;
+}
+
+.hero-buttons button,
+.explore-btn{
+    display:inline-block;
+    padding:14px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-buttons button{
+    background:#4b2e1e;
+    color:#fff;
+}
+
+.hero-buttons button:hover{
+    background:#7b4a2e;
+    transform:translateY(-3px);
+}
+
+.explore-btn{
+    display:inline-block;
+    background:#4b2e1e;
+    color:#fff;
+    padding:14px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.explore-btn:hover{
+    background:#7b4a2e;
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+.hero-features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:25px;
+    font-size:18px;
+    font-weight:600;
+    color:#4b2e1e;
 }
