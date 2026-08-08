@@ -1,4 +1,4 @@
-    ```css
+css
 /* =========================================
    BABA ATTA CHAKKI - MODERN DESIGN
 ========================================= */
@@ -109,18 +109,26 @@ header > button:hover {
 /* =========================================
    HERO SECTION
 ========================================= */
-
 .hero {
     min-height: 78vh;
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 80px 20px;
-    background:
-        radial-gradient(circle at top right, #ffe7aa 0%, transparent 35%),
-        linear-gradient(135deg, #fffaf0 0%, #f5e4c3 100%);
-    position: relative;
+
+    padding: 80px 5%;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(255, 248, 235, 0.95) 0%,
+            rgba(255, 248, 235, 0.78) 42%,
+            rgba(255, 248, 235, 0.15) 100%
+        ),
+        url("Images/hero-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
@@ -592,4 +600,161 @@ footer {
         font-size: 18px;
     }
 }
-```
+/* =========================
+   TOAST NOTIFICATION
+========================= */
+
+.toast {
+    position: fixed;
+    top: 90px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #3f281b;
+    color: white;
+
+    padding: 13px 18px;
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+
+    z-index: 99999;
+
+    animation: toastIn 0.3s ease;
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3b63f;
+    color: #3f281b;
+
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.toast.hide {
+    animation: toastOut 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .toast {
+        top: 75px;
+        left: 15px;
+        right: 15px;
+
+        justify-content: center;
+
+        font-size: 13px;
+        padding: 12px 14px;
+    }
+}
+/* MINI ADD TO CART POPUP */
+
+.mini-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    background: #3f281b;
+    color: #fff;
+
+    padding: 9px 15px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.2);
+
+    z-index: 99999;
+
+    animation: miniPop 0.25s ease;
+}
+
+@keyframes miniPop {
+    from {
+        opacity: 0;
+        transform: scale(0.7) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .mini-toast {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        font-size: 12px;
+        padding: 8px 13px;
+    }
+}
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 650px;
+
+        padding: 60px 20px;
+
+        background-position: 65% center;
+
+        background-image:
+            linear-gradient(
+                rgba(255, 248, 235, 0.88),
+                rgba(255, 248, 235, 0.88)
+            ),
+            url("Images/hero-bg.png");
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}
