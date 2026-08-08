@@ -124,7 +124,7 @@ header > button:hover {
             rgba(255, 248, 235, 0.78) 42%,
             rgba(255, 248, 235, 0.15) 100%
         ),
-        url("Images/hero-bg.jpg");
+        url("hero-bg.jpg");
 
     background-size: cover;
     background-position: center;
