@@ -9,7 +9,7 @@ function addToCart(productName, price) {
 
     updateCart();
 
-    alert(productName + " added to cart!");
+    showToast();
 }
 
 function updateCart() {
@@ -118,3 +118,15 @@ document.addEventListener("click", function (event) {
     }
 
 });
+function showToast(message) {
+    const toast = document.createElement("div");
+
+    toast.className = "mini-toast";
+    toast.innerHTML = `✓ Added to cart`;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 1800);
+}
