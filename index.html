@@ -10,13 +10,83 @@
 </head>
 <div id="cart-section" class="cart-section">
 
-    <h2>Your Cart</h2>
+    <h2>🛒 Your Cart</h2>
 
     <div id="cart-items"></div>
 
-    <h3>Total: ₹<span id="cart-total">0</span></h3>
+    <h3 class="cart-total">
+        Total: ₹<span id="cart-total">0</span>
+    </h3>
 
-    <button onclick="placeOrder()">
+    <!-- DELIVERY ADDRESS -->
+    <div class="address-section">
+
+        <h3>📍 Delivery Address</h3>
+
+        <input
+            type="text"
+            id="customer-name"
+            placeholder="Full Name"
+            autocomplete="name"
+        >
+
+        <input
+            type="tel"
+            id="customer-phone"
+            placeholder="Mobile Number"
+            maxlength="10"
+            autocomplete="tel"
+        >
+
+        <input
+            type="text"
+            id="customer-house"
+            placeholder="House / Flat / Shop No."
+            autocomplete="street-address"
+        >
+
+        <input
+            type="text"
+            id="customer-area"
+            placeholder="Area / Locality"
+        >
+
+        <div class="address-row">
+
+            <input
+                type="text"
+                id="customer-city"
+                placeholder="City"
+                autocomplete="address-level2"
+            >
+
+            <input
+                type="tel"
+                id="customer-pincode"
+                placeholder="Pincode"
+                maxlength="6"
+                autocomplete="postal-code"
+            >
+
+        </div>
+
+        <button
+            type="button"
+            class="save-address-btn"
+            onclick="saveAddress()"
+        >
+            💾 Save Address
+        </button>
+
+        <p id="address-saved" class="address-saved"></p>
+
+    </div>
+
+    <button
+        type="button"
+        class="place-order-btn"
+        onclick="placeOrder()"
+    >
         Place Order
     </button>
 
