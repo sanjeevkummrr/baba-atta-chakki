@@ -758,3 +758,120 @@ footer {
         font-size: 15px;
     }
 }
+/* =========================================
+   DELIVERY ADDRESS
+========================================= */
+
+.address-section {
+    margin-top: 20px;
+    padding: 16px;
+    background: #fffaf2;
+    border: 1px solid #eee0ca;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.address-section h3 {
+    color: #3f281b;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.address-section input {
+    width: 100%;
+    padding: 11px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd1c0;
+    border-radius: 9px;
+    background: #fff;
+    color: #3f281b;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.address-section input:focus {
+    border-color: #d59a32;
+    box-shadow: 0 0 0 2px rgba(213, 154, 50, 0.12);
+}
+
+.address-row {
+    display: flex;
+    gap: 10px;
+}
+
+.address-row input {
+    width: 50%;
+}
+
+.save-address-btn {
+    width: 100%;
+    background: #f3b63f !important;
+    color: #3f281b !important;
+    padding: 10px !important;
+    margin-top: 2px !important;
+    border-radius: 9px !important;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.save-address-btn:hover {
+    background: #ffc85d !important;
+}
+
+.address-saved {
+    display: none;
+    margin-top: 9px;
+    color: #3d7a3d;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: #3f281b !important;
+    color: white !important;
+    padding: 13px !important;
+    margin-top: 15px !important;
+    border-radius: 10px !important;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.place-order-btn:hover {
+    background: #5b3824 !important;
+}
+
+
+/* =========================================
+   ADDRESS MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .address-section {
+        padding: 13px;
+    }
+
+    .address-section h3 {
+        font-size: 17px;
+    }
+
+    .address-section input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .address-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .address-row input {
+        width: 100%;
+    }
+
+}
