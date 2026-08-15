@@ -1,112 +1,87 @@
-# 🌾 Baba Atta Chakki
+# Baba Atta Chakki — Dynamic Version
 
-A simple and responsive online grocery website for **Baba Atta Chakki**, built using **HTML, CSS, and JavaScript**. Customers can browse products, choose different pack sizes, add items to the cart, and place orders directly through WhatsApp.
+This version converts the original static product HTML into a data-driven storefront.
 
-## 🚀 Live Demo
+## What is dynamic now?
 
-🔗 https://sanjeevkummrr.github.io/baba-atta-chakki/
+- Products are generated from the `PRODUCTS` array in `script.js`.
+- Search products by name/category/description.
+- Filter by category.
+- Sort by price or name.
+- Select pack size and price dynamically.
+- Cart supports quantity +/−, remove and clear.
+- Cart persists after refresh using localStorage.
+- Delivery address persists using localStorage.
+- Order ID is generated automatically.
+- WhatsApp order message is generated from the current cart/address.
+- Product images have a fallback if an image is missing.
+- Mobile responsive UI.
 
----
 
-## ✨ Features
+LIVE DEMO: https://sanjeevkummrr.github.io/baba-atta-chakki/
 
-- 🛒 Shopping Cart
-- ⚖️ Multiple Weight Options
-  - 250 GM
-  - 500 GM
-  - 1 KG
-  - 2 KG
-  - 5 KG
-  - 10 KG
-- 💰 Automatic Price Update
-- 📱 Responsive Design
-- 📦 Traditional Flour Products
-- 💬 WhatsApp Order Integration
-- 🖼️ Product Images
-- 🌾 Baba Atta Chakki Branding
 
----
+## Folder structure
 
-## 🛍️ Products
-
-- MP Sarbati Wheat Atta
-- Wheat Atta
-- Multi Grain Atta
-- Chana Sattu
-- Jau Sattu
-- Chana Besan
-- Makka Atta
-- Bajra Atta
-- Jau/Guri Atta
-- Madua/Ragi Atta
-- Jwar Atta
-
----
-
-## 🛠️ Built With
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-
----
-
-## 📂 Project Structure
-
-```
-baba-atta-chakki/
-│
+```text
+baba-atta-dynamic/
 ├── index.html
-├── style.css
 ├── script.js
-├── Images/
-│   ├── logo.png
-│   ├── mp-sarbati.jpg
-│   ├── wheat-atta.jpg
-│   ├── multigrain-atta.jpg
-│   ├── chana-sattu.jpg
-│   ├── jau-sattu.jpg
-│   ├── chana-besan.jpg
-│   ├── makka-atta.jpg
-│   ├── bajra-atta.jpg
-│   ├── jau-guri-atta.jpg
-│   ├── madua-ragi-atta.jpg
-│   └── jwar-atta.jpg
+├── style.css
+├── README.md
+└── Images/
+    └── Put your existing project images here
 ```
 
----
+## Important
 
-## 📞 Contact
+The uploaded project contained the HTML/CSS/JS but not the image files. Copy your existing `Images` folder into this project's `Images` folder.
 
-**Baba Atta Chakki**
+Expected image names include:
 
-📍 Mahabir Nagar Colony, Sonatalab, Daniyalpur, Varanasi, Uttar Pradesh, India
+- logo.png
+- hero-bg.jpg
+- mp-sarbati.jpg
+- wheat-atta.jpg
+- multigrain-atta.jpg
+- chana-sattu.jpg
+- jau-sattu.jpg
+- chana-besan.jpg
+- makka-atta.jpg
+- bajra-atta.jpg
+- jau-guri-atta.jpg
+- madua-ragi-atta.jpg
+- jwar-atta.jpg
 
-📱 Phone: +91 94503 26864
+## Add a new product
 
-💬 WhatsApp Ordering Available
+Open `script.js` and add another object inside `PRODUCTS`.
 
----
+Example:
 
-## 📌 Future Improvements
+```js
+{
+    id: "new-product",
+    name: "New Atta",
+    category: "Special Atta",
+    image: "new-atta.jpg",
+    description: "Short product description.",
+    prices: [
+        { label: "500 GM", price: 40 },
+        { label: "1 KG", price: 75 },
+        { label: "5 KG", price: 350 }
+    ]
+}
+```
 
-- 🔍 Product Search
-- 📂 Category Filters
-- 🛒 Sliding Cart
-- ⭐ Best Seller Products
-- 📦 Order Tracking
-- 📊 Admin Dashboard
-- 📋 Google Forms / Google Sheets Order Management
-- 💳 Online Payment Integration
+No new product HTML is required.
 
----
+## Run
 
-## 👨‍💻 Author
+You can open `index.html` directly in a browser.
 
-**Sanjeev Kumar**
+For development, VS Code + Live Server is recommended.
 
-GitHub: https://github.com/sanjeevkummrr
+## Next step for a real production e-commerce site
 
----
-
-⭐ If you like this project, don't forget to give it a Star!
+This is still a frontend/localStorage project. For real customers and real orders, add a backend/database such as Firebase, Supabase, Node.js + MongoDB, or another server-side system. Then add an admin panel for products, prices, stock and orders.
