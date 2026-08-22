@@ -324,3 +324,78 @@ section{padding:55px 14px}.section-heading h2{font-size:30px}
   .add-btn{padding:8px 7px;font-size:10px}
   .cart-drawer{padding:14px !important}
 }
+
+/* =========================
+   DELIVERY + REVIEWS + ORDER SUCCESS
+   ========================= */
+.cart-summary>div{margin-bottom:8px}
+.cart-summary .cart-grand-total{
+    border-top:1px dashed #dbcdbb;
+    padding-top:10px;
+    margin-top:10px;
+    font-size:20px;
+    margin-bottom:0;
+}
+.cart-summary .cart-grand-total strong{color:#b36b00}
+.reviews-section{background:#faf8f3}
+.reviews-list{
+    max-width:1050px;
+    margin:0 auto 25px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+.review-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:18px;
+    box-shadow:0 5px 18px rgba(65,45,30,.06);
+}
+.review-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.review-top strong{color:var(--brown)}
+.stars{color:#d99518;letter-spacing:1px;white-space:nowrap}
+.review-card p{color:var(--muted);font-size:13px;line-height:1.6;margin:12px 0}
+.review-card small{color:#9a8a7c}
+.review-form-card{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:22px;
+}
+.review-form-card h3{color:var(--brown);margin-bottom:14px;text-align:center}
+.review-form{display:grid;gap:10px}
+.review-form input,.review-form select,.review-form textarea{
+    width:100%;
+    border:1px solid #ddd1c0;
+    border-radius:9px;
+    padding:11px;
+    background:#fffdf9;
+    color:var(--brown);
+    outline:none;
+}
+.review-form textarea{min-height:100px;resize:vertical}
+.review-form .primary-btn{cursor:pointer}
+.order-success{
+    margin:0 5% 50px;
+    padding:35px 20px;
+    text-align:center;
+    background:#fffaf2;
+    border:1px solid #eadbc7;
+    border-radius:20px;
+}
+.order-success[hidden]{display:none}
+.success-icon{
+    width:60px;height:60px;border-radius:50%;
+    display:grid;place-items:center;margin:0 auto 12px;
+    background:#3d7a3d;color:#fff;font-size:30px;font-weight:800;
+}
+.order-success h2{color:var(--brown);margin-bottom:8px}
+.order-success p{color:var(--muted);margin-bottom:18px}
+
+@media(max-width:700px){
+    .reviews-list{grid-template-columns:1fr}
+    .review-top{align-items:flex-start;flex-direction:column;gap:5px}
+}
