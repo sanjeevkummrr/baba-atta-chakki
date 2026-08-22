@@ -162,6 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("save-address").addEventListener("click", saveAddress);
     document.getElementById("place-order").addEventListener("click", placeOrder);
     document.getElementById("clear-cart").addEventListener("click", clearCart);
+    document.getElementById("submit-review").addEventListener("click", submitReview);
+    document.getElementById("continue-shopping").addEventListener("click", () => {
+        document.getElementById("order-success").hidden = true;
+        document.getElementById("products").scrollIntoView({behavior: "smooth"});
+    });
+    renderReviews();
 
     document.addEventListener("keydown", e => {
         if (e.key === "Escape") closeCart();
@@ -282,10 +288,23 @@ function renderCart() {
     const empty = document.getElementById("cart-empty");
 
     const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 30;
+    const total = subtotal + delivery;
 
     document.getElementById("cart-count").textContent = totalQty;
+    document.getElementById("cart-subtotal").textContent = subtotal.toLocaleString("en-IN");
+    document.getElementById("delivery-charge").textContent = delivery === 0 ? "FREE" : "₹30";
     document.getElementById("cart-total").textContent = total.toLocaleString("en-IN");
+
+    const note = document.getElementById("delivery-note");
+    if (note) {
+        note.textContent = subtotal >= 500
+            ? "🎉 You unlocked FREE Delivery!"
+            : subtotal > 0
+                ? `Add ₹${(500 - subtotal).toLocaleString("en-IN")} more for FREE Delivery`
+                : "₹500 or above → Free Delivery";
+    }
 
     empty.style.display = cart.length ? "none" : "block";
 
@@ -418,7 +437,11 @@ function placeOrder() {
         message += `• ${encodeURIComponent(item.name)} (${encodeURIComponent(item.weight)}) × ${item.qty} = ₹${item.price * item.qty}%0A`;
     });
 
-    message += `%0A*Total: ₹${total}*%0A%0A`;
+    const delivery = total >= 500 ? 0 : 30;
+    const finalTotal = total + delivery;
+    message += `%0A*Subtotal: ₹${total}*%0A`;
+    message += `*Delivery: ${delivery === 0 ? "FREE" : "₹30"}*%0A`;
+    message += `*Grand Total: ₹${finalTotal}*%0A%0A`;
     message += `*Delivery Address:*%0A`;
     message += `Name: ${encodeURIComponent(address.name)}%0A`;
     message += `Mobile: ${encodeURIComponent(address.phone)}%0A`;
@@ -428,6 +451,11 @@ function placeOrder() {
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
 
+    document.getElementById("order-success-text").textContent =
+        `Order ${orderId} prepared. Subtotal ₹${total.toLocaleString("en-IN")} + Delivery ${delivery === 0 ? "FREE" : "₹30"} = ₹${finalTotal.toLocaleString("en-IN")}.`;
+    document.getElementById("order-success").hidden = false;
+    closeCart();
+    document.getElementById("order-success").scrollIntoView({behavior: "smooth"});
     showToast(`Order ${orderId} prepared`);
 }
 
@@ -486,3 +514,80 @@ function escapeAttr(value) {
  * OPTIONAL: To add a new product, add one object to PRODUCTS.
  * No HTML product-card code is required.
  */
+
+/* =========================    
+   CUSTOMER REVIEWS
+   ========================= */
+const DEFAULT_REVIEWS = [
+    {
+        name: "Rahul Sharma",
+        rating: 5,
+        text: "Fresh atta and very good quality. Delivery was also on time."
+    },
+    {
+        name: "Priya Singh",
+        rating: 5,
+        text: "Sattu was very fresh and tasty. Highly recommended!"
+    },
+    {
+        name: "Amit Kumar",
+        rating: 4,
+        text: "Good quality atta and reasonable prices. Will order again."
+    },
+    {
+        name: "Neha Verma",
+        rating: 5,
+        text: "Very fresh chakki atta. The quality is really good."
+    },
+    {
+        name: "Vikas Gupta",
+        rating: 5,
+        text: "Baba Atta Chakki ka atta bahut fresh aur soft hai. Quality kaafi achhi lagi."
+    },
+    {
+        name: "Anjali Mishra",
+        rating: 5,
+        text: "Makka atta aur wheat atta dono excellent quality ke hain. Packing bhi achhi thi."
+    }
+];
+
+function loadReviews() {
+    return loadJSON("babaAttaReviews", DEFAULT_REVIEWS);
+}
+
+function renderReviews() {
+    const container = document.getElementById("reviews-list");
+    if (!container) return;
+    const reviews = loadReviews();
+
+    container.innerHTML = reviews.map(review => `
+        <article class="review-card">
+            <div class="review-top">
+                <strong>${escapeHTML(review.name)}</strong>
+                <span class="stars">${"★".repeat(Number(review.rating))}${"☆".repeat(5-Number(review.rating))}</span>
+            </div>
+            <p>${escapeHTML(review.text)}</p>
+            <small>Customer Review</small>
+        </article>
+    `).join("");
+}
+
+function submitReview() {
+    const name = document.getElementById("review-name").value.trim();
+    const rating = Number(document.getElementById("review-rating").value);
+    const text = document.getElementById("review-text").value.trim();
+
+    if (!name || !text) {
+        showToast("Please enter your name and review");
+        return;
+    }
+
+    const reviews = loadReviews();
+    reviews.unshift({name, rating, text});
+    localStorage.setItem("babaAttaReviews", JSON.stringify(reviews.slice(0, 12)));
+
+    document.getElementById("review-name").value = "";
+    document.getElementById("review-text").value = "";
+    renderReviews();
+    showToast("Thank you for your review ⭐");
+}
